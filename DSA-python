@@ -1,0 +1,388 @@
+# num1=input("enter first num")
+# num2=input("enter secondd num")
+# sum=int(num1)+int(num2)
+# print(sum)
+
+# t=[1,2,4]
+# t.reverse()
+# print(t)
+
+# concatinate 2 lists
+# a=[1,2,3,4,5]
+# b= [6,7,8]
+# print(a+b)
+
+#Top 100 string questions
+
+1. #reverse a string?
+a="asif raza"
+reverse=""
+
+for i in range(len(a)):
+    reverse +=a[len(a)-i-1]
+print(reverse) 
+
+2.# reverse a string without changing a arrangement eg=fisa azar
+a="asif raza"
+reverse=""
+
+for i in range(len(a)):
+    if a[i]==" ":
+        reverse += " "
+    else:
+        reverse +=a[len(a)-i-1]
+print(reverse)
+
+3.#check given strin is palindrom or not
+a="gadag"
+b="gadag"
+reverse=""
+
+for i in range(len(a)):
+    reverse +=a[len(a)-i-1]
+if reverse==b:
+    print("true")
+else:
+    print("false")
+
+4.#Find the first non-repeating character in a string. eg=w is non repeating element
+a="swiss"
+
+for i in a:
+    if a.count(i)==1:
+        print(i)
+        
+
+5.#Determine if two strings are anagrams.
+str1 = 'anagram'
+str2 = 'nagaram'
+
+def sort(a):
+    for i in range(len(a)):
+        for j in range(i+1, len(a)):
+            if a[i] > a[j]:
+                a[i], a[j] = a[j], a[i]
+    return a
+    # if any space is thair then return "".join(a)
+    
+sorted_str1 = sort(list(str1))
+sorted_str2 = sort(list(str2))
+
+if sorted_str1==sorted_str2:
+    print("given str is anagram")
+else:
+    print("false")
+
+6.#Find the longest substring without repeating characters.
+s = "abcabcbb"
+max_length = 0
+start = 0
+char_set = set()
+
+for i in range(len(s)):
+    while s[i] in char_set:
+        char_set.remove(s[start])
+        start += 1
+    char_set.add(s[i])
+    max_length = max(max_length, i - start + 1)
+
+print(max_length)
+
+7.#Find the longest palidromic string in given str
+a="gtrjbngbmgmbgjortijghtngjnmbgr"
+longest_sub=""
+
+for i in range(len(a)):
+    for j in range(i, len(a)):
+        curr_sub=a[i:j+1]
+        if curr_sub==curr_sub[::-1]:
+            if len(curr_sub)>len(longest_sub):
+                longest_sub=curr_sub
+print(longest_sub)
+
+8.#Longest common prefix among an array of strings.
+strs = ["flower", "flow", "flight"]
+prefix = strs[0]
+    
+    # Iterate over the rest of the strings
+for s in strs[1:]:
+    # Compare the prefix with the current string
+    for i in range(len(prefix)):
+        if i >= len(s) or prefix[i] != s[i]:
+            prefix = prefix[:i]
+            break
+
+print(prefix)  # Expected Output: "fl"
+
+9.#Count Occurrences of a Character:
+#Problem: Count the number of times a specific character appears in a string.
+#Example: Input: "banana", character: "a" -> Output: 3.
+a = "banana"
+target_char = "a"
+count = 0
+
+for i in range(len(a)):
+    if a[i] == target_char:
+        count += 1
+
+print(count)
+
+10.#Remove Duplicates:
+# Problem: Remove duplicate characters in a string while maintaining the original order.
+# Example: Input: "aabbcc" -> Output: "abc".
+a = "aabbcc"
+result = ""
+
+for i in range(len(a)):
+    if a[i] not in result:
+        result += a[i]
+
+print(result)
+
+11.#String Compression:
+# Problem: Compress a string using the counts of repeated characters.
+# Example: Input: "aabcccccaaa" -> Output: "a2b1c5a3".
+
+a = "aabcccccaaa"
+compressed_string = ""
+count = 1
+
+for i in range(len(a)):
+    if i == len(a) - 1 or a[i] != a[i+1]:
+        compressed_string += a[i] + str(count)
+        count = 1
+    else:
+        count += 1
+
+print(compressed_string)
+
+
+#array questions
+1.#find the target sum of subarray
+a=[1,2,4,5,7,3,6]
+target_sum=9
+
+# target=0
+for i in range(len(a)):
+    for j in range(i+1, len(a)):
+        if(a[i]+a[j]==target_sum):
+            print("present")
+print("not present")
+
+
+2.#sort an array assending order (min to high)
+a=[1,2,4,5,7,3,6]
+
+for i in range(len(a)):
+    for j in range(i+1, len(a)):
+        if(a[i]>a[j]):
+            a[i],a[j]=a[j],a[i]
+print(a)
+
+3.#Rotate an array
+a=[1,3,2,0,0]
+rev=[]
+
+for i in range (len(a)):
+    rev.append(a[len(a)-i-1])
+print(rev)
+
+#o/p =[0, 0, 2, 3, 1]
+
+4.#remove the duplicate if duplicate is their means print true or false
+a = ["a", "b"]
+result=[]
+
+c= False
+
+for i in range(len(a)):
+    if a[i] not in result:
+        result.append(a[i])
+    else :
+        c=True
+
+if c:
+    print("true")
+else:
+    print("false")
+
+5# find the min and max iin array
+a = [1, 3, 5, 2, 4]
+
+max_ele=a[0]
+min_ele=a[0]
+
+for i in range(len(a)):
+    if a[i]>max_ele:
+        max_ele=a[i]
+    elif a[i]<min_ele:
+        min_ele=a[i]
+
+print(max_ele)
+print(min_ele)
+
+6.#rotatate an array with respect to target value a = [1, 2, 3, 4, 5, 6, 7] k = 3
+
+a = [1, 2, 3, 4, 5, 6, 7]
+k = 3
+n = len(a)
+rotated = [0] * n
+
+for i in range(n):
+    new_position = (i + k) % n
+    rotated[new_position] = a[i]
+
+for i in range(n):
+    a[i] = rotated[i]
+
+print(a)  # Output: [5, 6, 7, 1, 2, 3, 4]
+
+or
+# Original list and number of positions to rotate
+a = [1, 2, 3, 4, 5, 6, 7]
+k = 3
+n = len(a)
+k = k % n
+rotated = a[-k:] + a[:-k]
+
+print(rotated)  # Output: [5, 6, 7, 1, 2, 3, 4]
+
+7.merge 2 sorted array
+a = [1, 3, 5]
+b = [2, 4, 6]
+
+result=[]
+i=0
+j=0
+
+while i<len(a) and i<len(b):
+    if a[i] <=b[j]:
+        result.append(a[i])
+        i+=1
+    else:
+        result.append(b[j])
+        j+=1
+
+result += a[i:]
+result +=b[j:]
+
+print(result)
+
+
+without using 3rd variable means result 
+a = [1, 3, 5]
+b = [2, 4, 6]
+
+# We will modify list a to hold the merged result
+# Start with pointers for both lists
+i, j = 0, 0
+
+# Iterate through both lists and merge them into a
+while i < len(a) and j < len(b):
+    if a[i] <= b[j]:
+        i += 1  # Move pointer in a
+    else:
+        # Insert b[j] into a at position i
+        a.insert(i, b[j])
+        j += 1  # Move pointer in b
+        i += 1  # Move pointer in a to the next position
+
+# If there are remaining elements in b, append them to a
+while j < len(b):
+    a.append(b[j])
+    j += 1
+
+print(a)  # Output: [1, 2, 3, 4, 5, 6]
+
+Star Patterns
+
+1
+*
+**
+***
+****
+*****
+# Number of rows for the triangle
+rows = 5
+
+# Loop through each row
+for i in range(1, rows):
+    print('*' * i)  # Print '*' i times
+
+2.reverse or 1
+
+r=5
+for i in range(r, 0, -1):
+    print('*' * i)
+
+merge sort 
+
+def merge_sort(arr):
+    if len(arr) > 1:
+        mid= len(arr) // 2
+        left_half = arr[:mid]
+        right_half= arr[mid:]
+        
+        left= merge_sort(left_half)
+        right= merge_sort(right_half)
+        
+        return merge(left, right)
+    else:
+        return arr
+        
+def merge(left, right):
+    sorted_arr=[]
+    i, j= 0,0
+    
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            sorted_arr.append(left[i])
+            i+=1
+        else:
+            sorted_arr.append(right[j])
+            j+=1
+            
+    sorted_arr.extend(left[i:])
+    sorted_arr.extend(right[j:])
+    
+    return sorted_arr
+    
+arr = [38, 27, 43, 3, 9, 82, 10]
+sorted_a = merge_sort(arr)
+print(sorted_a)
+
+
+12. RSF
+
+def reduce_to_single_digit(n):
+    while n >= 10:  # Continue until n is a single digit
+        digits = [int(d) for d in str(n)]  # Convert number to list of its digits
+        n = sum(abs(digits[i] - digits[i + 1]) for i in range(len(digits) - 1))  # Calculate the sum of absolute differences
+    return n
+
+# Example usage
+number = 123456
+result = reduce_to_single_digit(number)
+print(result)  # Output will be the reduced single digit
+
+
+12. median
+def median(num):
+    num.sort()
+    
+    n=len(num)
+    
+    mid= n//2
+    
+    if n % 2==0:
+        s= (num[mid-1] + num[mid]//2)
+        return s
+    else:
+        return (num[mid])
+        
+# Sample list
+data = [1, 3, 5, 7, 9, 11]
+median_value = median(data)
+
+print("Median is:", median_value)
+        

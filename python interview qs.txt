@@ -1,0 +1,489 @@
+1.what is python?
+Python is a high-level, open source , easy to learn ,general-purpose, interpreted programming language. which used in web, dev, gaming , ML
+and AI.
+ 
+-Highlevel-
+Python doesn’t require you to understand the details of the computer in order to develop programs efficiently.
+ 
+-interpreted
+To develop a Python program, you write Python code into a file called source code.
+ 
+To execute the source code, you need to convert it to the machine language that the computer can understand. And the Python interpreter turns the source code, line by line, once at a time, into the machine code when the Python program executes.
+ 
+Compiled languages like Java and C# use a compiler that compiles the whole source code before the program executes
+ 
+2- single line comment #,  multiline """code""" , / to write code in multiline and python uses the white space for inditation,
+single line strings ="asif" , multiline strings="""asifraza"""
+ 
+3.What is a variable in Python?
+In Python, a variable is a label that you can assign a value to it. And a variable is always associated with a value. eg full_name="asif"
+ 
+4.what is strings in py?
+A string is a series of characters. eg= a="bla bla" to escape character use \
+ 
+5.use f for multistrings
+name = 'John'
+message = f'Hi {name}'
+print(message)
+ 
+6.accesing string
+access string using index value first element= a[0] , last e=a[-1]
+To get the length of a string, you use the len() function
+ 
+eg-
+str = "Python String"
+str_len = len(str)
+print(str_len)
+ 
+7.what is slicing of strings
+Slicing allows you to get a substring from a string.
+eg-str = "Python String"
+print(str[0:2])
+op-py
+ 
+8.strings are mutable or immutable?
+Python strings are immutable. It means that you cannot change the string.
+ 
+When want to modify a string, you need to create a new one from the existing string. For example:
+str = "Python String"
+new_str = 'J' + str[1:] #first element
+print(new_str)
+ 
+9.data types
+-string
+-integer
+-Boolean
+ 
+10.is python support constant?
+no it not support constant variable
+ 
+11.what is casting or type convertion in python?
+to convering one data type to another datatype known as casting
+ 
+12.Python has six comparison operators, which are as follows:
+Less than ( < )  eg 10 < 9 false bcz 10 not less than 9
+Less than or equal to (<=)
+Greater than (>)
+Greater than or equal to (>=)
+Equal to ( == )
+Not equal to ( != )
+ 
+13.Python has three logical operators:
+and #both condition must be true
+or #either one condition should be trure
+not # not means !=
+ 
+14.ternery operator eg in py
+age= input("enter age")
+ticket_price = 20 if int(age) >= 18 else 5
+ 
+15.what is loop in py
+In programming, you often want to execute a block of code multiple times. To do so, you use a for loop.
+ 
+eg
+for index in range(5):
+    print(index) #op = 0,1,2,3,4 if want to start 1= (1,5)(start,end)
+ 
+we can use 3 also range(start, stop, step)
+ 
+for even num
+for index in range(0, 11, 2):
+    print(index)
+ 
+16.how to calculate the sum of the loop
+sum = 0
+for num in range(101):
+    sum += num
+ 
+print(sum)
+ 
+17.while loop in py
+max = 5
+counter = 0
+ 
+while counter < max:
+    print(counter)
+    counter += 1
+ 
+18.What is a function
+A function is a named code block that performs a job or returns a value
+ 
+def sum(a, b): --parameter we can pass default params also a='2' then if a is miisng in args it take default
+    return a + b
+ 
+ 
+total = sum(10,20) --argument  
+print(total)
+ 
+19.what is recursive fn in python?
+A recursive function is a function that calls itself until it doesn’t end.
+def count_down(start):
+    """ Count down from a number  """
+    print(start)
+    count_down(start-1)
+ 
+ 
+count_down(3)
+ 
+20.what is lambda fn in python?
+Python lambda expressions allow you to define anonymous functions.
+ 
+Anonymous functions are functions without names. The anonymous functions are useful when you need to use them once.
+ 
+A lambda expression typically contains one or more arguments, but it can have only one expression.
+ 
+lambda parameters: expression
+lambda first_name,last_name: f"{first_name} {last_name}"
+
+21.What is a List in py?
+A list is an ordered collection of items. means array in py we call it "List"
+Python uses the square brackets ([]) to indicate a list.
+
+we can access list from index value same as string
+
+the list is mutable we can add element and remove element  by index
+
+#adding
+numbers.append(100)
+
+#insert it place value at any possition
+numbers = [1, 3, 2, 7, 9, 4]
+numbers.insert(2, 100)
+
+print(numbers)
+
+# for removing we use del and pop
+using del we can target index del numbers[0] but pop removes last element or here also u can use the index value
+
+22.what is tupple in py?
+Sometimes, you want to create a list of items that cannot be changed throughout the program. Tuples allow you to do that.
+A tuple is a list that cannot change. Python refers to a value that cannot change as immutable. 
+So by definition, a tuple is an immutable list.
+A tuple is like a list except that it uses parentheses () instead of square brackets [].
+
+eg=rgb = ('red', 'green', 'blue') #we can access this using the index value
+
+since its immutable so cant change the values without new variable
+
+eg- if what at 0th index use rgb[1:]
+rgb = ('red', 'green', 'blue')
+r1 =  ('yellow',) + rgb 
+print(r1)
+
+23.what is sort method in string?
+to arrange the element in accending order or decending order we use sort
+list.sort()
+
+To sort elements from higher to lower,
+list.sort(reverse=True)
+
+sort companeys tupple based on review
+companies = [('Google', 2019, 134.81),
+             ('Apple', 2019, 260.2),
+             ('Facebook', 2019, 70.7)]
+
+
+# define a sort key
+def sort_key(company):
+    return company[2]
+
+
+
+# sort the companies by revenue
+companies.sort(key=sort_key, reverse=True)
+
+# show the sorted companies
+print(companies)
+
+24.Python sorted?
+The sort() method sorts a list in place. In other words, it changes the order of elements in the original list.
+
+To return the new sorted list from the original list, you use the sorted() function:
+
+sorted(list)
+The sorted() function doesn’t modify the original list.
+
+By default, the sorted() function sorts the elements of the list from lowest to highest using the less-than operator (<).
+
+If you want to reverse the sort order, you pass the reverse argument as True like this:
+
+sorted(list,reverse=True)
+
+guests = ['James', 'Mary', 'John', 'Patricia', 'Robert', 'Jennifer']
+sorted_guests = sorted(guests)
+
+print(guests)
+print(sorted_guests)
+
+op=['James', 'Mary', 'John', 'Patricia', 'Robert', 'Jennifer']
+['James', 'Jennifer', 'John', 'Mary', 'Patricia', 'Robert']
+
+25. what is Python List Slice?
+Lists support the slice notation that allows you to get a sublist from a list
+sub_list = list[begin: end: step]
+
+eg=colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+sub_colors = colors[1:4]
+
+print(sub_colors)
+
+op=['orange', 'yellow', 'green']
+To get the n-first elements from a list, you omit the first argument:
+
+list[:n] #colors[:3] #op=['red', 'orange', 'yellow']
+
+eg=sub_colors = colors[::2] #op=['red', 'yellow', 'blue', 'violet'] #it consider only 2nd element
+
+since list is immutable we can append als
+colors[0:2] = ['black', 'white'] #to find len len(colors)
+
+26.How to Use a For Loop to Iterate over a List
+eg 
+cities = ['New York', 'Beijing', 'Cairo', 'Mumbai', 'Mexico']
+
+for city in cities:
+    print(city)
+
+#to access index use enumerate #for item in enumerate(cities):
+
+27. map in python
+def double(bonus):
+    return bonus * 2
+
+
+bonuses = [100, 200, 300]
+
+iterator = map(double, bonuses)
+
+or 
+bonuses = [100, 200, 300]
+iterator = map(lambda bonus: bonus*2, bonuses)
+
+28.filter in pyton
+countries = [
+    ['China', 1394015977],
+    ['United States', 329877505],
+    ['India', 1326093247],
+    ['Indonesia', 267026366],
+    ['Bangladesh', 162650853],
+    ['Pakistan', 233500636],
+    ['Nigeria', 214028302],
+    ['Brazil', 21171597],
+    ['Russia', 141722205],
+    ['Mexico', 128649565]
+]
+
+populated = filter(lambda c: c[1] > 300000000, countries)
+
+print(list(populated))
+or
+scores = [70, 60, 80, 90, 50]
+filtered = filter(lambda score: score >= 70, scores)
+
+print(list(filtered))
+
+29.Reducing a list
+want to reduce a list to a single value.
+
+to find total
+scores = [75, 65, 80, 95, 50]
+
+total = 0
+
+for score in scores:
+    total += score
+
+print(total)
+
+syntax for reduces
+reduce(fn,list)
+
+eg
+from functools import reduce
+
+def sum(a, b):
+    print(f"a={a}, b={b}, {a} + {b} ={a+b}")
+    return a + b
+
+
+scores = [75, 65, 80, 95, 50]
+total = reduce(sum, scores)
+print(total)
+
+or total = reduce(lambda a, b: a + b, scores)
+
+30.what is dictnory in py?
+A Python dictionary is a collection of key-value pairs where each key is associated with a value. {}
+
+A value in the key-value pair can be a number, a string, a list, a tuple, or even another dictionary. 
+In fact, you can use a value of any valid type in Python as the value in the key-value pair.
+
+A key in the key-value pair must be immutable. In other words, the key cannot be changed, 
+for example, a number, a string, a tuple, etc.
+
+syntacx
+empty_dict = {}
+
+print(type(empty_dict))
+
+eg-
+person = {
+    'first_name': 'John',
+    'last_name': 'Doe',
+    'age': 25,
+    'favorite_colors': ['blue', 'green'],
+    'active': True
+}
+print(person['first_name'])
+print(person['last_name']) #op Doe, jhon
+
+###
+if not their means u can set default
+person = {
+    'first_name': 'John',
+    'last_name': 'Doe',
+    'age': 25,
+    'favorite_colors': ['blue', 'green'],
+    'active': True
+}
+
+ssn = person.get('ssn', '000-00-0000')
+print(ssn)
+
+#we can modyfy the value but not the keys
+person['age'] = 26
+
+#we can delete the key value
+del person['active']
+
+#looping the dict
+for key, value in person.items():
+    print(f"{key}: {value}")
+
+32.Introduction to the Python Set type
+A Python set is an unordered list of immutable elements. It means:
+
+Elements in a set are unordered.
+Elements in a set are unique. A set doesn’t allow duplicate elements.
+Elements in a set cannot be changed. For example, they can be numbers, strings, and tuples, but cannot be lists or dictionaries.
+To define a set in Python, you use the curly brace {}
+skills = {'Python programming','Databases', 'Software design'}
+
+#it remove the duplicate
+characters = set('letter')
+print(characters)
+
+#using len we can find the len
+ratings = {1, 2, 3, 4, 5}
+size = len(ratings)
+
+print(size)    
+
+# we can add & remove element
+set.add(element)
+set.remove(element)
+
+#to remove all
+set.clear()
+
+33.Frozen a set
+To make a set immutable, you use the built-in function called frozenset(). The frozenset() returns a new immutable 
+set from an existing one. For example:
+
+skills = {'Problem solving', 'Software design', 'Python programming'}
+skills = frozenset(skills)
+
+34.try exept and finally or else
+a = 10
+b = 0
+
+try:
+    c = a / b
+    print(c)
+except ZeroDivisionError as error:
+    print(error)
+finally:
+    print('Finishing up.')
+
+35Python *args?
+When a function has a parameter preceded by an asterisk (*), it can accept a variable number of arguments.
+ And you can pass zero, one, or more arguments to the *args parameter.
+
+In Python, the parameters like *args are called variadic parameters. 
+Functions that have variadic parameters are called variadic functions.
+
+Note that you don’t need to name args for a variadic parameter. 
+For example, you can use any meaningful names like *numbers, *strings, *lists, etc.
+* Use Python *arg arguments for a function that accepts a variable number of arguments.
+
+#basic
+def add(*args):
+    print(args)
+
+add(1,2)
+
+#for loop in args
+def add(*args):
+    total = 0
+    for arg in args:
+        total += arg
+    return total
+
+
+total = add(1, 2, 3)
+print(total)
+
+
+36Python **kwargs?
+The **kwargs is called a keyword parameter.
+
+When a function has the **kwargs parameter, 
+it can accept a variable number of keyword arguments as a dictionary.
+
+37.Introduction to Python modules
+A module is a piece of software that has a specific functionality. A Python module is a file that contains Python code.
+
+For example, when building a shopping cart application, you can have one module for calculating prices and another 
+module for managing items in the cart. Each module is a separate Python source code file.
+
+38.Introduction to Python packages
+Suppose that you need to develop a large application that handles the sales process from order to cash.
+
+The application will have many modules. 
+When the number of modules grows, it’ll become difficult to keep all of them in one location.
+
+so we use packages to arrange the modules
+
+39 what is decorator in python ?
+
+You can store the function in a variable.
+You can pass the function as a parameter to another function.
+You can return the function from a function.
+You can store them in data structures such as hash tables, lists, …
+
+eg - here we are storing the shout fn in yell variable
+def shout(text): 
+    return text.upper() 
+
+yell = shout 
+
+print(yell('Hello')) 
+
+---------------------------
+Django Questions
+1.What is pip?
+pip is the package installer for Python. Pip allows you to install packages from PyPI and other repositories.
+
+2.Why do you need Python virtual environments?
+to store all third party packages in one place we use venv
+Python uses virtual environments to create an isolated environment for every project. In other words, 
+each project will have its own directory to store third-party packages.
+
+3.what is class
+A class is a blueprint for creating objects.
+
+4.what is object
+In other words, an object is a container that contains the state and methods.
+
+5.Introduction to the Python Metaclass
+A metaclass is a class that creates other classes.
