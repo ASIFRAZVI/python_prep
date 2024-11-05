@@ -385,4 +385,17 @@ data = [1, 3, 5, 7, 9, 11]
 median_value = median(data)
 
 print("Median is:", median_value)
+
+
+
+fabronaci series
+def fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        yield a
+        a, b = b, a + b
+
+# Example usage
+for num in fibonacci(10):
+    print(num)  # Output: Fibonacci sequence up to the 10th number
         
