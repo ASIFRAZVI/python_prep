@@ -469,6 +469,64 @@ yell = shout
 
 print(yell('Hello')) 
 
+
+oops--
+inheritance 
+child class have parent properties
+
+polymorphism
+one class have multiple behavior
+eg
+class Desk:
+    def excute(self):
+        print("running")
+        
+        
+class Laptop:
+    def ne(self, Desk):
+        Desk.excute()
+        
+d=Desk()
+
+lap= Laptop()
+
+lap.ne(d)
+
+method overloading means changing the current metod to accept multiple value for eg sum function sometime want 2 argument sometime 3 argument
+
+2.method overriding means changing the logic of parent class method in inherited class
+
+eg- class Desk:
+    def excute(self):
+        print("running")
+        
+        
+class Laptop:
+    def excute(self):
+        print("walk")
+
+lap= Laptop()
+
+lap.excute() //op is walk
+
+3. abstact - in python we use ABC module to create abstract- and python not support abstract basically abstact means first the method is empty(initialized) but in child class we are overriding that
+eg
+from abc import ABC, abstractmethod
+
+class Desk(ABC):
+    @abstractmethod
+    def excute(self):
+        pass
+        
+        
+class Laptop(Desk):
+    def excute(self):
+        print("walk")
+
+lap= Laptop()
+
+lap.excute() //walk
+
 ---------------------------
 Django Questions
 1.What is pip?
@@ -487,3 +545,4 @@ In other words, an object is a container that contains the state and methods.
 
 5.Introduction to the Python Metaclass
 A metaclass is a class that creates other classes.
+
